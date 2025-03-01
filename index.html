@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://i.imgur.com/pPDgF0n.jpg') no-repeat center center / cover;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 95vw;
+            text-align: center;
+        }
+        h1 {
+            font-size: 5vw;
+            color: black;
+            margin-bottom: 15px;
+        }
+        .envelope {
+            width: 40vw;
+            max-width: 200px;
+            height: auto;
+            aspect-ratio: 5/3;
+            background: url('https://i.imgur.com/i0Msium.jpg') no-repeat center center / cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: shake 1s infinite alternate;
+        }
+        .envelope:hover {
+            transform: scale(1.1);
+        }
+        @keyframes shake {
+            from { transform: rotate(-3deg); }
+            to { transform: rotate(3deg); }
+        }
+        .hidden {
+            display: none;
+        }
+        .message-container {
+            font-size: 4vw;
+            color: black;
+            animation: fadeIn 1s ease-in;
+            font-weight: bold;
+            background: white;
+            padding: 5vw;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 90vw;
+            text-align: left;
+        }
+        .click-button {
+            padding: 3vw 6vw;
+            background-color: #8e44ad;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 4vw;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Georgia', serif;
+            margin-top: 20px;
+        }
+        .click-button:hover {
+            background-color: #6a0572;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 6vw;
+            }
+            .envelope {
+                width: 50vw;
+            }
+            .click-button {
+                font-size: 4.5vw;
+                padding: 4vw 8vw;
+            }
+            .message-container {
+                font-size: 4vw;
+                padding: 4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>A Special Surprise For The Best Person</h1>
+        <div id="step1">
+            <div class="envelope" onclick="openEnvelope()">Open Me</div>
+        </div>
+        
+        <div id="step2" class="hidden">
+            <button class="click-button" onclick="showMessage()">✨ Tap for a Surprise ✨</button>
+        </div>
+        
+        <div id="message" class="hidden message-container">
+            <p>
+                <strong>Dear Mam, ❤️</strong><br><br>
+                It’s been 10 years since I first met you, and yet, you are still the same positive energy that brightens every room you walk into. Every lesson you taught, every word of encouragement you gave, and every warm hug you shared has stayed with me, shaping me into the person I am today. ❤️✨<br><br>
+                I miss our classroom days so much—the way you made learning feel so special, the way you guided me through my doubts, and the way you always believed in me even when I doubted myself. I miss sitting in your class, listening to you explain things with so much warmth and patience. I miss the small conversations, the laughter, and the comfort of just being around you. You are not just a teacher to me; you are family. 💖<br><br>
+                I don’t know if I will ever make you proud, but you will always be one of the most important people in my life. Your teachings don’t just help in academics; they have become life lessons that I carry in my heart every single day. ❤️ Life may take me to different places, but the values you have instilled in me will stay forever.<br><br>
+                Every year, I have always given you a greeting card, but this time, I wanted to do something different. After all, I’m becoming an engineer, so going digital was a must! 😄💕 But along with that, there was something else I always dreamed of doing—gifting you something truly special. Since childhood, I have imagined the day when I would buy you a gift from my first income, as a small token of my love and gratitude. That moment hasn’t come yet, but when I won a prize at my college fest, I knew exactly what I wanted to do with it. I set aside a part of it just for you, because no matter what, you deserve to feel as special as you make me feel.<br><br>
+                Don’t forget to check your gift! 🎁 I hope it brings you even a fraction of the happiness you have given me over the years. ❤️<br><br>
+                Thank you for everything, Mam. I have no words to express how much you mean to me. You are my teacher, my mentor, my inspiration, and a blessing in my life. No matter where life takes me, you will always have a special place in my heart. 💖<br><br>
+                With endless love and gratitude,<br>
+                <strong>Shrawani ❤️✨</strong>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function openEnvelope() {
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+        }
+        function showMessage() {
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
