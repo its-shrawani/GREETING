@@ -28,12 +28,6 @@
             color: black;
             margin-bottom: 15px;
         }
-        .envelope-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
         .envelope {
             width: 40vw;
             max-width: 200px;
@@ -46,6 +40,8 @@
             cursor: pointer;
             transition: transform 0.3s ease;
             animation: shake 1s infinite alternate;
+            margin: 20px auto 0; /* Centers the envelope properly */
+            position: relative;
         }
         .envelope:hover {
             transform: scale(1.1);
@@ -107,12 +103,16 @@
                 height: 70vh;
             }
         }
+        /* Remove the unwanted '}' character */
+        body::after {
+            content: "";
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>A Special Surprise For The Best Person</h1>
-        <div id="step1" class="envelope-container">
+        <div id="step1">
             <div class="envelope" onclick="openEnvelope()">Open Me</div>
         </div>
         
