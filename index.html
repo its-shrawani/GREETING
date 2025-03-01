@@ -9,7 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background: url('https://i.imgur.com/pPDgF0n.jpg') no-repeat center center / cover;
             font-family: 'Georgia', serif;
             text-align: center;
@@ -17,6 +17,7 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            overflow-y: auto; /* Enable scrolling for the whole page */
         }
         .container {
             max-width: 95vw;
@@ -60,6 +61,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 90vw;
+            max-height: 70vh; /* Ensure it doesn't take full height */
+            overflow-y: auto; /* Enable scrolling inside the message */
             text-align: left;
         }
         .click-button {
@@ -93,6 +96,7 @@
                 padding: 4vw 8vw;
             }
             .message-container {
+                max-height: 60vh; /* Limit height on mobile */
                 font-size: 4vw;
                 padding: 4vw;
             }
